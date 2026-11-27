@@ -52,6 +52,8 @@ Porque el binlog se encarga de registrar los cambios realizados en la base de da
 **4. ¿Por qué se esperaron 5 segundos antes y después de anotar la hora?**
 Para tener una separación de tiempo entre la inserción de los nuevos registros y la eliminación accidental. Y tener un punto de recuperacion.
 
+---
+
 <div align="center">
   <h2>Complementos</h2>
 </div>
