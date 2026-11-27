@@ -71,7 +71,7 @@ mariadb -u root -p
 ```
 **Resultado:**
 
-![Entrar al cliente](/img/Screenshot%202026-11-26%20182205.png)
+![Entrar al cliente](./img/Screenshot%202026-11-26%20182205.png)
 
 Ejecutar:
 
@@ -94,7 +94,7 @@ INSERT INTO clientes (nombre, email) VALUES
 ```
 **Resultado:**
 
-![Ejecutar](/img/Screenshot%202026-11-26%20182621.png)
+![Ejecutar](./img/Screenshot%202026-11-26%20182621.png)
 
 Ejecutar: 
 
@@ -104,7 +104,7 @@ SELECT COUNT(*) FROM clientes;
 
 **Resultado:**
 
-![Ejecutar](/img/Screenshot%202026-11-26%20182839.png)
+![Ejecutar](./img/Screenshot%202026-11-26%20182839.png)
 
 **Resultado esperado:** `5`✅
 
@@ -117,7 +117,7 @@ mariadb-dump -u root -p --databases tienda > tienda_backup.sql
 ```
 **Resultado:**
 
-![Resultado](/img/Screenshot%202026-11-26%20183806.png)
+![Resultado](./img/Screenshot%202026-11-26%20183806.png)
 
 Comprobar que el archivo se creó:
 
@@ -126,7 +126,7 @@ ls -lh tienda_backup.sql
 ```
 **Resultado:**
 
-![Resultado](/img/Screenshot%202026-11-26%20184126.png)
+![Resultado](./img/Screenshot%202026-11-26%20184126.png)
 
 **Resultado esperado:** el archivo existe y tiene un tamaño mayor a 0. ✅
 
@@ -146,7 +146,7 @@ SHOW DATABASES;
 
 **Resultado:**
 
-![Resultado](/img/Screenshot%202026-11-26%20184321.png)
+![Resultado](./img/Screenshot%202026-11-26%20184321.png)
 
 **Resultado esperado:** la base `tienda` ya no aparece en la lista.✅
 
@@ -159,7 +159,7 @@ mariadb -u root -p < tienda_backup.sql
 ```
 **Resultado:**
 
-![Resultado](/img/Screenshot%202026-11-26%20184924.png)
+![Resultado](./img/Screenshot%202026-11-26%20184924.png)
 
 ### Paso 5. Verificar la recuperación
 
@@ -168,7 +168,7 @@ mariadb -u root -p -e "SELECT * FROM tienda.clientes;"
 ```
 **Resultado:**
 
-![Resultado](/img/Screenshot%202026-11-26%20185002.png)
+![Resultado](./img/Screenshot%202026-11-26%20185002.png)
 
 **Resultado esperado:** aparecen los 5 clientes.✅
 
@@ -198,7 +198,7 @@ server_id = 1
 ```
 **Resultado:**
 
-![Resultado](/img/Screenshot%202026-11-26%20190017.png)
+![Resultado](./img/Screenshot%202026-11-26%20190017.png)
 
 Guardar y reiniciar:
 
@@ -207,7 +207,7 @@ sudo systemctl restart mariadb
 ```
 **Resultado:**
 
-![Resultado](/img/Screenshot%202026-11-26%20190316.png)
+![Resultado](./img/Screenshot%202026-11-26%20190316.png)
 
 Verificar:
 
@@ -216,7 +216,7 @@ mariadb -u root -p -e "SHOW VARIABLES LIKE 'log_bin';"
 ```
 **Resultado:**
 
-![Resultado](/img/Screenshot%202026-11-26%20190413.png)
+![Resultado](./img/Screenshot%202026-11-26%20190413.png)
 
 **Resultado esperado:** `log_bin = ON`✅
 
@@ -233,7 +233,7 @@ grep "CHANGE MASTER" tienda_pitr.sql
 ```
 **Resultado:**
 
-![Resultado](/img/Screenshot%202026-11-26%20190538.png)
+![Resultado](./img/Screenshot%202026-11-26%20190538.png)
 
 **Resultado esperado** (los números pueden variar):
 
@@ -263,7 +263,7 @@ SELECT COUNT(*) FROM clientes;
 ```
 **Resultado:**
 
-![Resultado](/img/Screenshot%202026-11-26%20191015.png)
+![Resultado](./img/Screenshot%202026-11-26%20191015.png)
 
 **Resultado esperado:** `7`✅
 
@@ -274,7 +274,7 @@ SELECT NOW();
 ```
 **Resultado:**
 
-![Resultado](/img/Screenshot%202026-11-26%20191045.png)
+![Resultado](./img/Screenshot%202026-11-26%20191045.png)
 
 Anota la hora. Ejemplo: `2026-11-24 14:31:20`
 
@@ -290,7 +290,7 @@ SELECT COUNT(*) FROM clientes;
 ```
 **Resultado:**
 
-![Resultado](/img/Screenshot%202026-11-26%20191259.png)
+![Resultado](./img/Screenshot%202026-11-26%20191259.png)
 
 **Resultado esperado:** `0`✅
 
@@ -303,7 +303,7 @@ mariadb -u root -p < tienda_pitr.sql
 ```
 **Resultado:**
 
-![Resultado](/img/Screenshot%202026-11-26%20191410.png)
+![Resultado](./img/Screenshot%202026-11-26%20191410.png)
 
 En este punto solo hay 5 clientes (faltan Pedro y Laura).
 
@@ -317,7 +317,7 @@ sudo mariadb-binlog --start-position=385 --stop-datetime="2026-11-26 19:10:38" \
 ```
 **Resultado:**
 
-![Resultado](/img/Screenshot%202026-11-26%20192500.png)
+![Resultado](./img/Screenshot%202026-11-26%20192500.png)
 
 ### Paso 7. Verificar
 
@@ -326,7 +326,7 @@ mariadb -u root -p -e "SELECT * FROM tienda.clientes;"
 ```
 **Resultado:**
 
-![Resultado](/img/Screenshot%202026-11-26%20192628.png)
+![Resultado](./img/Screenshot%202026-11-26%20192628.png)
 
 **Resultado esperado:** 7 clientes, incluyendo **Pedro Nunez** y **Laura Vega**. ✅
 
