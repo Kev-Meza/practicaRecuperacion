@@ -344,14 +344,6 @@ En la segunda parte aprendí a utilizar el registro binario (binlog), el cual me
 
 Finalmente, comprendí que realizar respaldos periódicamente no siempre es suficiente, ya que se pueden perder los datos generados después del último respaldo. Por ello, es importante combinar las copias de seguridad con otros métodos de recuperación, así como verificar que funcionen correctamente. Esta práctica me permitió comprender mejor la importancia de la recuperación de datos dentro de la administración de bases de datos.
 
----
 
-<div align="center">
-  <h1>Complementos</h1>
-</div>
-
-[Cuestionario](/Cuestionario.md)
-
-[Anexo de investigación](/Anexo.md)
 
 

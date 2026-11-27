@@ -146,12 +146,3 @@ Revierte los cambios no confirmados de una transacción.
 - Material de clase: *Práctica 1: Recuperación de una base de datos en MariaDB*.
 
 
----
-
-<div align="center">
-  <h2>Complementos</h2>
-</div>
-
-[Practica](/README.md)
-
-[Cuestionario](/Cuestionario.md)
