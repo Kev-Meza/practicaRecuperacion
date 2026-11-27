@@ -42,10 +42,13 @@
 
 **1. ¿Qué datos se habrían perdido si solo hubieras usado el respaldo de la Parte A?**
 Se habrian perdido los dos datos que se agregaronn despues del respaldo.
+
 **2. ¿Para qué sirve la opción `--master-data=2`?**
 Guarda en el archivo la posición del binlog (clave para PITR).
+
 **3. ¿Por qué es necesario activar el binlog **antes** de que ocurra el error?**
 Porque el binlog se encarga de registrar los cambios realizados en la base de datos. Si se activa después del error, no se tendrán registrados los cambios anteriores y no será posible recuperarlos mediante este método.
+
 **4. ¿Por qué se esperaron 5 segundos antes y después de anotar la hora?**
 Para tener una separación de tiempo entre la inserción de los nuevos registros y la eliminación accidental. Y tener un punto de recuperacion.
 
